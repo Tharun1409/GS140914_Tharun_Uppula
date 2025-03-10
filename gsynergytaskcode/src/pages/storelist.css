@@ -1,13 +1,38 @@
-.add-store-btn {
-    background-color: #ff8c69;
-    border: none;
-    color: white;
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 200px;
+    background-color: #f4f4f4;
+    border-right: 1px solid #ddd;
+  }
+  
+  .pageContent {
+    margin-left: 220px;
+    padding: 20px;
+    width: calc(100% - 220px);
+  }
+  
+  .new-store-btn-container {
+    /* position: fixed; */
+    bottom: 10px;
+    left: 220px;
+    width: calc(100% - 220px);
+    text-align: left;
+    /* background-color: #f4f4f4; */
     padding: 10px 20px;
-    border-radius: 5px;
+  }
+  
+  .add-store-btn {
+    background-color: #ff7f50;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
     cursor: pointer;
-    margin-bottom: 10px;
-    transition: background 0.3s;
-}
+    border-radius: 4px;
+  }
+  
 
 .add-store-btn:hover {
     background-color: #ff6347;

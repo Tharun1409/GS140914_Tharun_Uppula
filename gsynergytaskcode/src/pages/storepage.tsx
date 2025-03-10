@@ -4,7 +4,7 @@ import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import "./storelist.css";
 
 interface Store {
-  id: number;
+  id: string | number;
   seq: number;
   label: string;
   city: string;
@@ -18,8 +18,10 @@ interface StoreListProps {
 const StoreList: React.FC<StoreListProps> = ({ data }) => {
   const [storeList, setStoreList] = useState<Store[]>(data);
 
-  const handleDelete = (id: number) => {
-    const updatedList = storeList.filter(store => store.id !== id);
+  const handleDelete = (id: string | number) => {
+    const numericId =
+      typeof id === "string" ? parseInt(id.replace(/\D/g, ""), 10) : id;
+    const updatedList = storeList.filter((store) => store.id !== numericId);
     setStoreList(updatedList);
   };
 
@@ -43,25 +45,22 @@ const StoreList: React.FC<StoreListProps> = ({ data }) => {
   };
 
   return (
-    <div>
-      <button className="add-store-btn" onClick={handleAddStore}>
-        NEW STORE
-      </button>
+    <div className="store-container">
       <DragDropContext onDragEnd={handleDragEnd}>
         <Droppable droppableId="stores">
           {(provided) => (
-            <table ref={provided.innerRef} {...provided.droppableProps}>
+            <table>
               <thead>
                 <tr>
+                  <th></th>
                   <th></th>
                   <th>S.No</th>
                   <th>Store</th>
                   <th>City</th>
                   <th>State</th>
-                  <th>Action</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody ref={provided.innerRef} {...provided.droppableProps}>
                 {storeList.map((store, index) => (
                   <Draggable
                     key={store.id.toString()}
@@ -69,20 +68,24 @@ const StoreList: React.FC<StoreListProps> = ({ data }) => {
                     index={index}
                   >
                     {(provided) => (
-                      <tr ref={provided.innerRef} {...provided.draggableProps}>
-                        <td {...provided.dragHandleProps}>
-                          <FaGripVertical />
-                        </td>
-                        <td>{store.seq}</td>
-                        <td>{store.label}</td>
-                        <td>{store.city}</td>
-                        <td>{store.state}</td>
+                      <tr
+                        ref={provided.innerRef}
+                        {...provided.draggableProps}
+                        {...provided.dragHandleProps}
+                      >
                         <td>
                           <FaTrash
                             onClick={() => handleDelete(store.id)}
                             style={{ cursor: "pointer", color: "red" }}
                           />
                         </td>
+                        <td>
+                          <FaGripVertical />
+                        </td>
+                        <td>{store.seq}</td>
+                        <td>{store.label}</td>
+                        <td>{store.city}</td>
+                        <td>{store.state}</td>
                       </tr>
                     )}
                   </Draggable>
@@ -93,9 +96,12 @@ const StoreList: React.FC<StoreListProps> = ({ data }) => {
           )}
         </Droppable>
       </DragDropContext>
-      <button className="add-store-btn" onClick={handleAddStore}>
-        NEW STORE
-      </button>
+
+      <div className="new-store-btn-container">
+        <button className="add-store-btn" onClick={handleAddStore}>
+          NEW STORE
+        </button>
+      </div>
     </div>
   );
 };
