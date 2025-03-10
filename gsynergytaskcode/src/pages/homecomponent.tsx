@@ -5,6 +5,7 @@ import { SkuStoreData, storeData } from "../data/storeData";
 import "./homecomponent.css";
 import SKUList from "./skupage";
 import PlanningGrid from "./planningpage";
+import { PlanningData } from "../data/storeData";
 
 const HomeComponent: React.FC = () => {
   const [selectedTab, setSelectedTab] = useState<string>("Store");
@@ -16,9 +17,7 @@ const HomeComponent: React.FC = () => {
       case "SKU":
         return <SKUList data={SkuStoreData}/>;
       case "Planning":
-        return <div>
-            <PlanningGrid/>
-        </div>;
+        return <PlanningGrid rowData={PlanningData}/>
       case "Charts":
         return <div>Charts Content</div>;
       default:

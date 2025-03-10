@@ -15,3 +15,11 @@ export interface DataStore {
     cost: string;
   }
   
+  export interface IStoreData {
+    Store: string;
+    SKU: string;
+    Week: string;
+    SalesUnits: number;
+    Price: number;
+    Cost: number;
+}
