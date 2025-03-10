@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import Sidebar from "../components/sidebarcomponent";
 import StoreList from "../pages/storepage";
-import { storeData } from "../data/storeData";
+import { SkuStoreData, storeData } from "../data/storeData";
 import "./homecomponent.css";
+import SKUList from "./skupage";
+import PlanningGrid from "./planningpage";
 
 const HomeComponent: React.FC = () => {
   const [selectedTab, setSelectedTab] = useState<string>("Store");
@@ -12,9 +14,11 @@ const HomeComponent: React.FC = () => {
       case "Store":
         return <StoreList data={storeData} />;
       case "SKU":
-        return <div>SKU Content</div>;
+        return <SKUList data={SkuStoreData}/>;
       case "Planning":
-        return <div>Planning Content</div>;
+        return <div>
+            <PlanningGrid/>
+        </div>;
       case "Charts":
         return <div>Charts Content</div>;
       default:

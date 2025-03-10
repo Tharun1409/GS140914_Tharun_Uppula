@@ -5,3 +5,13 @@ export interface Store {
     city: string;
     state: string;
 }
+// types/storeTypes.ts
+export interface DataStore {
+    id: string;
+    label: string;
+    class: string;
+    department: string;
+    price: string;
+    cost: string;
+  }
+  

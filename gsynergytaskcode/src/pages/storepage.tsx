@@ -38,7 +38,8 @@ const StoreList: React.FC<StoreListProps> = ({ data }) => {
 
   const handleDragEnd = (result: any) => {
     if (!result.destination) return;
-    const items = Array.from(storeList);
+
+    const items =[...storeList];;
     const [reorderedItem] = items.splice(result.source.index, 1);
     items.splice(result.destination.index, 0, reorderedItem);
     setStoreList(items);
@@ -53,14 +54,14 @@ const StoreList: React.FC<StoreListProps> = ({ data }) => {
               <thead>
                 <tr>
                   <th></th>
-                  <th></th>
+                  <th>Action</th>
                   <th>S.No</th>
                   <th>Store</th>
                   <th>City</th>
                   <th>State</th>
                 </tr>
               </thead>
-              <tbody ref={provided.innerRef} {...provided.droppableProps}>
+               <tbody ref={provided.innerRef} {...provided.droppableProps}>
                 {storeList.map((store, index) => (
                   <Draggable
                     key={store.id.toString()}
