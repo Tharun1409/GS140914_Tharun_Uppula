@@ -21,4 +21,7 @@ export const storeData: Store[] = [
   { seq: 18, id: "ST177", label: "San Diego Wave Surf Shop", city: "San Diego", state: "CA" },
   { seq: 19, id: "ST193", label: "Charlotte Queen’s Closet", city: "Charlotte", state: "NC" },
   { seq: 20, id: "ST208", label: "Detroit Motor Gear", city: "Detroit", state: "MI" }
-];
+].map(store=>({
+    ...store,
+    id: parseInt(store.id.replace(/\D/g, ""), 10) 
+}));
