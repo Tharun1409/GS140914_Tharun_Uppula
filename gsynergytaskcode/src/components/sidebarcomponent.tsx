@@ -1,12 +1,6 @@
 import React from "react";
-import {
-  FaStore,
-  FaBox,
-  FaProjectDiagram,
-  FaChartBar,
-  FaTrash,
-} from "react-icons/fa";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStore, faBox, faProjectDiagram, faChartBar } from "@fortawesome/free-solid-svg-icons";
 import styles from "./sidebar.module.css";
 
 interface SidebarProps {
@@ -25,36 +19,28 @@ const Sidebar: React.FC<SidebarProps> = ({ setSelectedTab }) => {
     <div className={styles.sidebar}>
       <ul>
         <li
-          className={`${styles.tab} ${
-            activeTab === "Store" ? styles.active : ""
-          }`}
+          className={`${styles.tab} ${activeTab === "Store" ? styles.active : ""}`}
           onClick={() => handleTabClick("Store")}
         >
-          <FaStore /> Store
+          <FontAwesomeIcon icon={faStore} style={{ marginRight: "8px" }} /> Store
         </li>
         <li
-          className={`${styles.tab} ${
-            activeTab === "SKU" ? styles.active : ""
-          }`}
+          className={`${styles.tab} ${activeTab === "SKU" ? styles.active : ""}`}
           onClick={() => handleTabClick("SKU")}
         >
-          <FaBox /> SKU
+          <FontAwesomeIcon icon={faBox} style={{ marginRight: "8px" }} /> SKU
         </li>
         <li
-          className={`${styles.tab} ${
-            activeTab === "Planning" ? styles.active : ""
-          }`}
+          className={`${styles.tab} ${activeTab === "Planning" ? styles.active : ""}`}
           onClick={() => handleTabClick("Planning")}
         >
-          <FaProjectDiagram /> Planning
+          <FontAwesomeIcon icon={faProjectDiagram} style={{ marginRight: "8px" }} /> Planning
         </li>
         <li
-          className={`${styles.tab} ${
-            activeTab === "Charts" ? styles.active : ""
-          }`}
+          className={`${styles.tab} ${activeTab === "Charts" ? styles.active : ""}`}
           onClick={() => handleTabClick("Charts")}
         >
-          <FaChartBar /> Charts
+          <FontAwesomeIcon icon={faChartBar} style={{ marginRight: "8px" }} /> Charts
         </li>
       </ul>
     </div>

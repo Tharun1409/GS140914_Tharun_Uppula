@@ -1,36 +1,24 @@
 .sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 200px;
-    background-color: #f4f4f4;
-    border-right: 1px solid #ddd;
-  }
-  
-  .pageContent {
-    margin-left: 220px; 
-    padding: 20px;
-    width: calc(100% - 220px);
-  }
-  
-
-.tab {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 15px 20px;
-    cursor: pointer;
-    color: #333;
-    border-bottom: 1px solid #ddd;
+  position: fixed;
+  left: 0;
+  top: 70px; 
+  width: 250px;
+  height: calc(100vh - 60px);  
+  background: #f4f4f4;
+  z-index: 100;  
+  padding-top: 20px;
 }
 
-.tab:hover { 
-    background-color: #e0e0e0; 
+.sidebar ul {
+  list-style: none;
+  padding: 0;
 }
 
-.active {
-    background-color: #6200ea;
-    color: #fff;
-    font-weight: bold;
+.sidebar li {
+  padding: 15px;
+  cursor: pointer;
+}
+
+.sidebar li.active {
+  background-color: #ddd;
 }

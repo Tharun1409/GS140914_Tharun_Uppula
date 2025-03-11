@@ -145,6 +145,8 @@ export const storeData: Store[] = [
   },
 ];
 
+
+
 export const SkuStoreData: DataStore[] = [
   {
     id: "SK00158",
@@ -1410,45 +1412,44 @@ export interface IStoreChartsData {
   gmDollars: number;
   salesDollars: number;
   gmPercent: number;
+  store: string;  
 }
 
-export const ChartData: IStoreChartsData[] = [
-  { week: 'W01', gmDollars: 140061.78, salesDollars: 239526.34, gmPercent: 58 },
-  { week: 'W02', gmDollars: 110391.21, salesDollars: 258634.60, gmPercent: 43 },
-  { week: 'W03', gmDollars: 101657.28, salesDollars: 263774.46, gmPercent: 39 },
-  { week: 'W04', gmDollars: 134341.07, salesDollars: 332652.41, gmPercent: 40 },
-  { week: 'W05', gmDollars: 130398.15, salesDollars: 275162.26, gmPercent: 47 },
-  { week: 'W06', gmDollars: 137438.96, salesDollars: 319884.60, gmPercent: 43 },
-  
 
-  { week: 'W01', gmDollars: 140061.78, salesDollars: 239526.34, gmPercent: 58 },
-  { week: 'W02', gmDollars: 110391.21, salesDollars: 258634.60, gmPercent: 43 },
-  { week: 'W03', gmDollars: 101657.28, salesDollars: 263774.46, gmPercent: 39 },
-  { week: 'W04', gmDollars: 134341.07, salesDollars: 332652.41, gmPercent: 40 },
-  { week: 'W05', gmDollars: 130398.15, salesDollars: 275162.26, gmPercent: 47 },
-  { week: 'W06', gmDollars: 137438.96, salesDollars: 319884.60, gmPercent: 43 },
-  { week: 'W01', gmDollars: 140061.78, salesDollars: 239526.34, gmPercent: 58 },
-  { week: 'W02', gmDollars: 110391.21, salesDollars: 258634.60, gmPercent: 43 },
-  { week: 'W03', gmDollars: 101657.28, salesDollars: 263774.46, gmPercent: 39 },
-  { week: 'W04', gmDollars: 134341.07, salesDollars: 332652.41, gmPercent: 40 },
-  { week: 'W05', gmDollars: 130398.15, salesDollars: 275162.26, gmPercent: 47 },
-  { week: 'W06', gmDollars: 137438.96, salesDollars: 319884.60, gmPercent: 43 },
-  { week: 'W01', gmDollars: 140061.78, salesDollars: 239526.34, gmPercent: 58 },
-  { week: 'W02', gmDollars: 110391.21, salesDollars: 258634.60, gmPercent: 43 },
-  { week: 'W03', gmDollars: 101657.28, salesDollars: 263774.46, gmPercent: 39 },
-  { week: 'W04', gmDollars: 134341.07, salesDollars: 332652.41, gmPercent: 40 },
-  { week: 'W05', gmDollars: 130398.15, salesDollars: 275162.26, gmPercent: 47 },
-  { week: 'W06', gmDollars: 137438.96, salesDollars: 319884.60, gmPercent: 43 },
-  { week: 'W01', gmDollars: 140061.78, salesDollars: 239526.34, gmPercent: 58 },
-  { week: 'W02', gmDollars: 110391.21, salesDollars: 258634.60, gmPercent: 43 },
-  { week: 'W03', gmDollars: 101657.28, salesDollars: 263774.46, gmPercent: 39 },
-  { week: 'W04', gmDollars: 134341.07, salesDollars: 332652.41, gmPercent: 40 },
-  { week: 'W05', gmDollars: 130398.15, salesDollars: 275162.26, gmPercent: 47 },
-  { week: 'W06', gmDollars: 137438.96, salesDollars: 319884.60, gmPercent: 43 },
-  { week: 'W01', gmDollars: 140061.78, salesDollars: 239526.34, gmPercent: 58 },
-  { week: 'W02', gmDollars: 110391.21, salesDollars: 258634.60, gmPercent: 43 },
-  { week: 'W03', gmDollars: 101657.28, salesDollars: 263774.46, gmPercent: 39 },
-  { week: 'W04', gmDollars: 134341.07, salesDollars: 332652.41, gmPercent: 40 },
-  { week: 'W05', gmDollars: 130398.15, salesDollars: 275162.26, gmPercent: 47 },
-  { week: 'W06', gmDollars: 137438.96, salesDollars: 319884.60, gmPercent: 43 },
+export const ChartData: IStoreChartsData[] = [
+  { week: 'W01', gmDollars: 140061.78, salesDollars: 239526.34, gmPercent: 58, store: 'Store A' },
+  { week: 'W02', gmDollars: 110391.21, salesDollars: 258634.60, gmPercent: 43, store: 'Store B' },
+  { week: 'W03', gmDollars: 101657.28, salesDollars: 263774.46, gmPercent: 39, store: 'Store A' },
+  { week: 'W04', gmDollars: 134341.07, salesDollars: 332652.41, gmPercent: 40, store: 'Store B' },
+  { week: 'W01', gmDollars: 200000, salesDollars: 239526, gmPercent: 60, store: 'San Francisco Bay Trends' },
+    { week: 'W02', gmDollars: 150000, salesDollars: 258634, gmPercent: 40, store: 'San Francisco Bay Trends' },
+    { week: 'W03', gmDollars: 120000, salesDollars: 263774, gmPercent: 35, store: 'San Francisco Bay Trends' },
+    { week: 'W04', gmDollars: 180000, salesDollars: 332652, gmPercent: 50, store: 'San Francisco Bay Trends' },
+  { week: 'W06', gmDollars: 137438.96, salesDollars: 319884.60, gmPercent: 43, store: 'Store A' },
+  { week: 'W01', gmDollars: 140061.78, salesDollars: 239526.34, gmPercent: 58, store: 'Store A' },
+  { week: 'W02', gmDollars: 110391.21, salesDollars: 258634.60, gmPercent: 43, store: 'Store A' },
+  { week: 'W03', gmDollars: 101657.28, salesDollars: 263774.46, gmPercent: 39, store: 'Store A' },
+  { week: 'W04', gmDollars: 134341.07, salesDollars: 332652.41, gmPercent: 40, store: 'Store A' },
+  { week: 'W05', gmDollars: 130398.15, salesDollars: 275162.26, gmPercent: 47, store: 'Store A' },
+  { week: 'W06', gmDollars: 137438.96, salesDollars: 319884.60, gmPercent: 43, store: 'Store A' },
+  { week: 'W01', gmDollars: 140061.78, salesDollars: 239526.34, gmPercent: 58, store: 'Store A' },
+  { week: 'W02', gmDollars: 110391.21, salesDollars: 258634.60, gmPercent: 43, store: 'Store A' },
+  { week: 'W03', gmDollars: 101657.28, salesDollars: 263774.46, gmPercent: 39, store: 'Store A' },
+  { week: 'W04', gmDollars: 134341.07, salesDollars: 332652.41, gmPercent: 40, store: 'Store A' },
+  { week: 'W05', gmDollars: 130398.15, salesDollars: 275162.26, gmPercent: 47, store: 'Store A' },
+  { week: 'W06', gmDollars: 137438.96, salesDollars: 319884.60, gmPercent: 43, store: 'Store A' },
+  { week: 'W01', gmDollars: 140061.78, salesDollars: 239526.34, gmPercent: 58, store: 'Store A' },
+  { week: 'W02', gmDollars: 110391.21, salesDollars: 258634.60, gmPercent: 43, store: 'Store A' },
+  { week: 'W03', gmDollars: 101657.28, salesDollars: 263774.46, gmPercent: 39, store: 'Store A' },
+  { week: 'W04', gmDollars: 134341.07, salesDollars: 332652.41, gmPercent: 40, store: 'Store A' },
+  { week: 'W05', gmDollars: 130398.15, salesDollars: 275162.26, gmPercent: 47, store: 'Store A' },
+  { week: 'W06', gmDollars: 137438.96, salesDollars: 319884.60, gmPercent: 43, store: 'Store A' },
+  { week: 'W01', gmDollars: 140061.78, salesDollars: 239526.34, gmPercent: 58, store: 'Store A' },
+  { week: 'W02', gmDollars: 110391.21, salesDollars: 258634.60, gmPercent: 43, store: 'Store A' },
+  { week: 'W03', gmDollars: 101657.28, salesDollars: 263774.46, gmPercent: 39, store: 'Store A' },
+  { week: 'W04', gmDollars: 134341.07, salesDollars: 332652.41, gmPercent: 40, store: 'Store A' },
+  { week: 'W05', gmDollars: 130398.15, salesDollars: 275162.26, gmPercent: 47, store: 'Store A' },
+  { week: 'W06', gmDollars: 137438.96, salesDollars: 319884.60, gmPercent: 43, store: 'Store A' },
 ];
+
+

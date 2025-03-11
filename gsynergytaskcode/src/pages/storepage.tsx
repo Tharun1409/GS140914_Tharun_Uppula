@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { FaTrash, FaGripVertical } from "react-icons/fa";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash, faGripVertical } from "@fortawesome/free-solid-svg-icons";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import "./storelist.css";
 
@@ -40,7 +40,7 @@ const StoreList: React.FC<StoreListProps> = ({ data }) => {
   const handleDragEnd = (result: any) => {
     if (!result.destination) return;
 
-    const items =[...storeList];;
+    const items = [...storeList];
     const [reorderedItem] = items.splice(result.source.index, 1);
     items.splice(result.destination.index, 0, reorderedItem);
     setStoreList(items);
@@ -62,7 +62,7 @@ const StoreList: React.FC<StoreListProps> = ({ data }) => {
                   <th>State</th>
                 </tr>
               </thead>
-               <tbody ref={provided.innerRef} {...provided.droppableProps}>
+              <tbody ref={provided.innerRef} {...provided.droppableProps}>
                 {storeList.map((store, index) => (
                   <Draggable
                     key={store.id.toString()}
@@ -76,13 +76,17 @@ const StoreList: React.FC<StoreListProps> = ({ data }) => {
                         {...provided.dragHandleProps}
                       >
                         <td>
-                          <FaTrash
+                          <FontAwesomeIcon
+                            icon={faTrash}
                             onClick={() => handleDelete(store.id)}
                             style={{ cursor: "pointer", color: "red" }}
                           />
                         </td>
                         <td>
-                          <FaGripVertical />
+                          <FontAwesomeIcon
+                            icon={faGripVertical}
+                            style={{ cursor: "grab" }}
+                          />
                         </td>
                         <td>{store.seq}</td>
                         <td>{store.label}</td>

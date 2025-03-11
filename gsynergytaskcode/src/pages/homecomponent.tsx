@@ -1,15 +1,23 @@
 import React, { useState } from "react";
 import Sidebar from "../components/sidebarcomponent";
 import StoreList from "../pages/storepage";
-import { SkuStoreData, storeData, storeDatas,  ChartData } from "../data/storeData";
+import {
+  
+  ChartData,
+  SkuStoreData,
+  storeData,
+  storeDatas,
+
+
+} from "../data/storeData";
 import "./homecomponent.css";
 import SKUList from "./skupage";
 import PlanningGrid from "./planningpage";
 // import { PlanningData } from "../data/storeData";
-import ChartsPage from "./chartspage";
-import 'ag-grid-community/styles/ag-grid.css';
-import 'ag-grid-community/styles/ag-theme-alpine.css';
 
+import "ag-grid-community/styles/ag-grid.css";
+import "ag-grid-community/styles/ag-theme-alpine.css";
+import ChartsPage from "./chartspage";
 
 const HomeComponent: React.FC = () => {
   const [selectedTab, setSelectedTab] = useState<string>("Store");
@@ -19,17 +27,14 @@ const HomeComponent: React.FC = () => {
       case "Store":
         return <StoreList data={storeData} />;
       case "SKU":
-        return <SKUList data={SkuStoreData}/>;
+        return <SKUList data={SkuStoreData} />;
 
-        case "Planning":
-         
-          return  <PlanningGrid rowData={storeDatas} />;
-          
+      case "Planning":
+        return <PlanningGrid rowData={storeDatas} />;
 
-     
-          case "Charts":
-          return <ChartsPage chartdatastore={ChartData} />;
-        
+      case "Charts":
+        return  <ChartsPage chartdatastore={ChartData}/>
+
 
       default:
         return <StoreList data={storeData} />;
@@ -39,9 +44,7 @@ const HomeComponent: React.FC = () => {
   return (
     <div className="homeContainer">
       <Sidebar setSelectedTab={setSelectedTab} />
-      <div className="pageContent">
-        {renderContent()}
-      </div>
+      <div className="pageContent">{renderContent()}</div>
     </div>
   );
 };

@@ -12,6 +12,7 @@ import {
 } from "@mui/material";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import { useAuth } from "../context/authcontext";
+import './navbar.module.css'
 
 const Navbar: React.FC = () => {
   const { user, loading, signInWithGoogle, signOutUser } = useAuth();

@@ -1,6 +1,8 @@
 import React, { useState } from "react";
-import { SkuStoreData } from "../data/storeData";
-import { FaTrash, FaEdit } from "react-icons/fa";
+import { DataStore } from "../types/storeTypes";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
+
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import "./skulist.css";
 
@@ -12,14 +14,14 @@ interface SKU {
   price: string;
   cost: string;
 }
-
-const SKUList: React.FC = () => {
-  const [skuData, setSkuData] = useState<SKU[]>(SkuStoreData);
-
- 
+interface SKUListProps {
+  data: DataStore[];
+}
+const SKUList: React.FC<SKUListProps> = ({ data }) => {
+  const [skuData, setSkuData] = useState<SKU[]>(data);
   const handleAddSKU = () => {
     const newSKU: SKU = {
-      id: `SK00${skuData.length + 1}`, 
+      id: `SK00${skuData.length + 1}`,
       label: "New SKU",
       class: "Category",
       department: "Department",
@@ -29,12 +31,10 @@ const SKUList: React.FC = () => {
     setSkuData([...skuData, newSKU]);
   };
 
- 
   const handleDelete = (id: string) => {
     const updatedList = skuData.filter((sku) => sku.id !== id);
     setSkuData(updatedList);
   };
-
 
   const handleDragEnd = (result: any) => {
     if (!result.destination) return;
@@ -53,7 +53,9 @@ const SKUList: React.FC = () => {
       </button>
 
       {skuData.length === 0 ? (
-        <p className="empty-message">No SKU data available. Please add new SKUs.</p>
+        <p className="empty-message">
+          No SKU data available. Please add new SKUs.
+        </p>
       ) : (
         <DragDropContext onDragEnd={handleDragEnd}>
           <Droppable droppableId="skuTable">
@@ -77,11 +79,7 @@ const SKUList: React.FC = () => {
 
                 <tbody>
                   {skuData.map((sku, index) => (
-                    <Draggable
-                      key={sku.id}
-                      draggableId={sku.id}
-                      index={index}
-                    >
+                    <Draggable key={sku.id} draggableId={sku.id} index={index}>
                       {(provided) => (
                         <tr
                           ref={provided.innerRef}
@@ -95,8 +93,10 @@ const SKUList: React.FC = () => {
                           <td>{sku.department}</td>
                           <td>{sku.price}</td>
                           <td>{sku.cost}</td>
+
                           <td>
-                            <FaTrash
+                            <FontAwesomeIcon
+                              icon={faTrash}
                               onClick={() => handleDelete(sku.id)}
                               style={{ cursor: "pointer", color: "red" }}
                             />
