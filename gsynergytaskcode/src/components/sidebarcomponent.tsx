@@ -1,5 +1,6 @@
 import React from "react";
-import { FaStore, FaBox, FaProjectDiagram, FaChartBar } from "react-icons/fa";
+import { FaStore, FaBox, FaProjectDiagram, FaChartBar, FaTrash } from "react-icons/fa";
+
 import styles from "./sidebar.module.css";
 
 interface SidebarProps {

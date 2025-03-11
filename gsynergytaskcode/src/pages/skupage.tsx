@@ -16,10 +16,10 @@ interface SKU {
 const SKUList: React.FC = () => {
   const [skuData, setSkuData] = useState<SKU[]>(SkuStoreData);
 
-  // ✅ Add New SKU
+ 
   const handleAddSKU = () => {
     const newSKU: SKU = {
-      id: `SK00${skuData.length + 1}`, // Ensuring proper ID increment
+      id: `SK00${skuData.length + 1}`, 
       label: "New SKU",
       class: "Category",
       department: "Department",
@@ -29,13 +29,13 @@ const SKUList: React.FC = () => {
     setSkuData([...skuData, newSKU]);
   };
 
-  // ✅ Delete SKU
+ 
   const handleDelete = (id: string) => {
     const updatedList = skuData.filter((sku) => sku.id !== id);
     setSkuData(updatedList);
   };
 
-  // ✅ Handle Drag & Drop Reordering
+
   const handleDragEnd = (result: any) => {
     if (!result.destination) return;
 

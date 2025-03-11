@@ -1,6 +1,6 @@
 import { Store } from "../types/storeTypes";
 import { DataStore } from "../types/storeTypes";
-import { IStoreData } from "../types/storeTypes";
+// import { IStoreData } from "../types/storeTypes";
 
 export const storeData: Store[] = [
   {
@@ -1356,30 +1356,50 @@ export const SkuStoreData: DataStore[] = [
   },
 ];
 
-// Exporting the data
-export const PlanningData: IStoreData[] = [
-  {
-    Store: "ST035",
-    SKU: "SK00158",
-    Week: "W01",
-    SalesUnits: 58,
-    Price: 15,
-    Cost: 10,
-  },
-  {
-    Store: "ST035",
-    SKU: "SK00158",
-    Week: "W07",
-    SalesUnits: 107,
-    Price: 20,
-    Cost: 8,
-  },
-  {
-    Store: "ST035",
-    SKU: "SK00158",
-    Week: "W09",
-    SalesUnits: 0,
-    Price: 18,
-    Cost: 12,
-  },
+// export const PlanningData: IStoreData[] = [
+//   {
+//     Store: "ST035",
+//     SKU: "SK00158",
+//     Week: "W01",
+//     Month: "Jan",  // ✅ Added Month field
+//     SalesUnits: 58,
+//     Price: 15,
+//     Cost: 10
+//   },
+//   {
+//     Store: "ST035",
+//     SKU: "SK00158",
+//     Week: "W07",
+//     Month: "Feb",  
+//     SalesUnits: 107,
+//     Price: 20,
+//     Cost: 8
+//   },
+
+
+export interface IStoreData {
+  Store: string;
+  SKU: string;
+  Week: string;
+  Month: string;
+  SalesUnits: number;
+  Price: number;
+  Cost: number;
+}
+
+export const storeDatas: IStoreData[] = [
+  { Store: "ST035", SKU: "SK00158", Week: "W01", Month: "M01", SalesUnits: 58, Price: 6669.42, Cost: 1060.44 },
+  { Store: "ST035", SKU: "SK00158", Week: "W07", Month: "M01", SalesUnits: 107, Price: 12303.93, Cost: 1956.32 },
+  { Store: "ST035", SKU: "SK00158", Week: "W09", Month: "M01", SalesUnits: 0, Price: 0, Cost: 0 },
+  { Store: "ST035", SKU: "SK00158", Week: "W11", Month: "M01", SalesUnits: 92, Price: 10579.08, Cost: 1682.07 },
+  { Store: "ST035", SKU: "SK00158", Week: "W13", Month: "M01", SalesUnits: 122, Price: 14028.78, Cost: 2230.58 },
+  { Store: "ST035", SKU: "SK00269", Week: "W05", Month: "M03", SalesUnits: 107, Price: 1068.93, Cost: 904.31 },
+  { Store: "ST035", SKU: "SK00269", Week: "W06", Month: "M03", SalesUnits: 104, Price: 1038.96, Cost: 878.96 },
+  { Store: "ST035", SKU: "SK00269", Week: "W09", Month: "M03", SalesUnits: 32, Price: 319.68, Cost: 270.45 },
+  { Store: "ST035", SKU: "SK00300", Week: "W14", Month: "M06", SalesUnits: 135, Price: 26998.65, Cost: 2402.88 },
+  { Store: "ST035", SKU: "SK00304", Week: "W16", Month: "M07", SalesUnits: 40, Price: 5599.60, Cost: 431.17 },
+  { Store: "ST035", SKU: "SK00304", Week: "W18", Month: "M07", SalesUnits: 140, Price: 19598.60, Cost: 1509.09 },
+  { Store: "ST035", SKU: "SK00304", Week: "W36", Month: "M08", SalesUnits: 28, Price: 3919.72, Cost: 301.82 },
+  { Store: "ST035", SKU: "SK00304", Week: "W42", Month: "M08", SalesUnits: 11, Price: 1539.89, Cost: 118.57 },
+  { Store: "ST035", SKU: "SK00304", Week: "W47", Month: "M08", SalesUnits: 42, Price: 5879.58, Cost: 452.73 },
 ];

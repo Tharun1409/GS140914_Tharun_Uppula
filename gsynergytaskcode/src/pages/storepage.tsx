@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FaTrash, FaGripVertical } from "react-icons/fa";
+
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import "./storelist.css";
 

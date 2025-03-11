@@ -9,21 +9,26 @@
 }
 
 .sidebar {
-    width: 250px; /* Fixed sidebar width */
-    background-color: #4A148C; /* Purple color */
+    width: 250px; 
+    background-color: #4A148C; 
     color: #fff;
-    flex-shrink: 0; /* Prevents sidebar from shrinking */
-    height: 100vh; /* Ensures it spans the full height */
-    position: fixed; /* Ensures the sidebar stays fixed */
+    flex-shrink: 0; 
+    height: 100vh; 
+    position: fixed; 
     top: 0;
     left: 0;
-    z-index: 1000; /* Keeps the sidebar on top */
+    z-index: 1000; 
   }
   
   .pageContent {
-    margin-left: 250px; /* Offsets the content by the sidebar width */
-    width: calc(100% - 250px); /* Ensures content adapts to remaining width */
+    flex: 1;
+    margin-left: 250px; 
+    width: calc(100% - 250px); 
     padding: 20px;
-    overflow: auto; /* Enables scrolling for content */
+    overflow: auto; 
     background-color: #fff;
+  }
+  .ag-theme-alpine {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
