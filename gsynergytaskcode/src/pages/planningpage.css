@@ -1,3 +1,16 @@
-.ag-theme-alpine .ag-cell {
-    color: #000; 
+.green-cell {
+    background-color: #4CAF50;
+    color: #fff;
+}
+.yellow-cell {
+    background-color: #FFD700;
+    color: #000;
+}
+.orange-cell {
+    background-color: #FFA500;
+    color: #fff;
+}
+.red-cell {
+    background-color: #FF5733;
+    color: #fff;
 }

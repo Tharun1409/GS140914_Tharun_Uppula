@@ -1,5 +1,11 @@
 import React from "react";
-import { FaStore, FaBox, FaProjectDiagram, FaChartBar, FaTrash } from "react-icons/fa";
+import {
+  FaStore,
+  FaBox,
+  FaProjectDiagram,
+  FaChartBar,
+  FaTrash,
+} from "react-icons/fa";
 
 import styles from "./sidebar.module.css";
 
@@ -19,26 +25,34 @@ const Sidebar: React.FC<SidebarProps> = ({ setSelectedTab }) => {
     <div className={styles.sidebar}>
       <ul>
         <li
-          className={`${styles.tab} ${activeTab === "Store" ? styles.active : ""}`}
+          className={`${styles.tab} ${
+            activeTab === "Store" ? styles.active : ""
+          }`}
           onClick={() => handleTabClick("Store")}
         >
           <FaStore /> Store
         </li>
         <li
-          className={`${styles.tab} ${activeTab === "SKU" ? styles.active : ""}`}
+          className={`${styles.tab} ${
+            activeTab === "SKU" ? styles.active : ""
+          }`}
           onClick={() => handleTabClick("SKU")}
         >
           <FaBox /> SKU
         </li>
         <li
-          className={`${styles.tab} ${activeTab === "Planning" ? styles.active : ""}`}
+          className={`${styles.tab} ${
+            activeTab === "Planning" ? styles.active : ""
+          }`}
           onClick={() => handleTabClick("Planning")}
         >
           <FaProjectDiagram /> Planning
         </li>
         <li
-          className={`${styles.tab} ${activeTab === "charts" ? styles.active : ""}`}
-          onClick={() => handleTabClick("charts")}
+          className={`${styles.tab} ${
+            activeTab === "Charts" ? styles.active : ""
+          }`}
+          onClick={() => handleTabClick("Charts")}
         >
           <FaChartBar /> Charts
         </li>
