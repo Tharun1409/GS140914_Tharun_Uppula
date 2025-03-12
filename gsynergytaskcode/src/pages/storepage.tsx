@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash, faGripVertical } from "@fortawesome/free-solid-svg-icons";
-import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
+import { DragDropContext, Droppable, Draggable } from "@hello-pangea/dnd";
 import "./storelist.css";
 
 interface Store {
@@ -19,16 +19,15 @@ interface StoreListProps {
 const StoreList: React.FC<StoreListProps> = ({ data }) => {
   const [storeList, setStoreList] = useState<Store[]>(data);
 
+ 
   const handleDelete = (id: string | number) => {
-    const numericId =
-      typeof id === "string" ? parseInt(id.replace(/\D/g, ""), 10) : id;
-    const updatedList = storeList.filter((store) => store.id !== numericId);
+    const updatedList = storeList.filter((store) => store.id.toString() !== id.toString());
     setStoreList(updatedList);
   };
 
   const handleAddStore = () => {
     const newStore: Store = {
-      id: storeList.length + 1,
+      id: storeList.length + 1, 
       seq: storeList.length + 1,
       label: "New Store",
       city: "New City",
@@ -65,8 +64,8 @@ const StoreList: React.FC<StoreListProps> = ({ data }) => {
               <tbody ref={provided.innerRef} {...provided.droppableProps}>
                 {storeList.map((store, index) => (
                   <Draggable
-                    key={store.id.toString()}
-                    draggableId={store.id.toString()}
+                    key={store.id.toString()} 
+                    draggableId={store.id.toString()} 
                     index={index}
                   >
                     {(provided) => (
@@ -78,7 +77,7 @@ const StoreList: React.FC<StoreListProps> = ({ data }) => {
                         <td>
                           <FontAwesomeIcon
                             icon={faTrash}
-                            onClick={() => handleDelete(store.id)}
+                            onClick={() => handleDelete(store.id)} // Calls handleDelete
                             style={{ cursor: "pointer", color: "red" }}
                           />
                         </td>
@@ -98,7 +97,7 @@ const StoreList: React.FC<StoreListProps> = ({ data }) => {
                 ))}
                 {provided.placeholder}
               </tbody>
-            </table>
+            </table>    
           )}
         </Droppable>
       </DragDropContext>

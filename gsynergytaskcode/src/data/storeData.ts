@@ -1378,7 +1378,7 @@ export const SkuStoreData: DataStore[] = [
 //     Cost: 8
 //   },
 
-
+//Planning
 export interface IStoreData {
   Store: string;
   SKU: string;
@@ -1405,8 +1405,13 @@ export const storeDatas: IStoreData[] = [
   { Store: "ST035", SKU: "SK00304", Week: "W36", Month: "M08", SalesUnits: 28, Price: 3919.72, Cost: 301.82 },
   { Store: "ST035", SKU: "SK00304", Week: "W42", Month: "M08", SalesUnits: 11, Price: 1539.89, Cost: 118.57 },
   { Store: "ST035", SKU: "SK00304", Week: "W47", Month: "M08", SalesUnits: 42, Price: 5879.58, Cost: 452.73 },
+  
 ];
 
+
+
+
+//Charts Data
 export interface IStoreChartsData {
   week: string;
   gmDollars: number;
@@ -1417,39 +1422,56 @@ export interface IStoreChartsData {
 
 
 export const ChartData: IStoreChartsData[] = [
-  { week: 'W01', gmDollars: 140061.78, salesDollars: 239526.34, gmPercent: 58, store: 'Store A' },
-  { week: 'W02', gmDollars: 110391.21, salesDollars: 258634.60, gmPercent: 43, store: 'Store B' },
-  { week: 'W03', gmDollars: 101657.28, salesDollars: 263774.46, gmPercent: 39, store: 'Store A' },
-  { week: 'W04', gmDollars: 134341.07, salesDollars: 332652.41, gmPercent: 40, store: 'Store B' },
-  { week: 'W01', gmDollars: 200000, salesDollars: 239526, gmPercent: 60, store: 'San Francisco Bay Trends' },
-    { week: 'W02', gmDollars: 150000, salesDollars: 258634, gmPercent: 40, store: 'San Francisco Bay Trends' },
-    { week: 'W03', gmDollars: 120000, salesDollars: 263774, gmPercent: 35, store: 'San Francisco Bay Trends' },
-    { week: 'W04', gmDollars: 180000, salesDollars: 332652, gmPercent: 50, store: 'San Francisco Bay Trends' },
-  { week: 'W06', gmDollars: 137438.96, salesDollars: 319884.60, gmPercent: 43, store: 'Store A' },
-  { week: 'W01', gmDollars: 140061.78, salesDollars: 239526.34, gmPercent: 58, store: 'Store A' },
-  { week: 'W02', gmDollars: 110391.21, salesDollars: 258634.60, gmPercent: 43, store: 'Store A' },
-  { week: 'W03', gmDollars: 101657.28, salesDollars: 263774.46, gmPercent: 39, store: 'Store A' },
-  { week: 'W04', gmDollars: 134341.07, salesDollars: 332652.41, gmPercent: 40, store: 'Store A' },
-  { week: 'W05', gmDollars: 130398.15, salesDollars: 275162.26, gmPercent: 47, store: 'Store A' },
-  { week: 'W06', gmDollars: 137438.96, salesDollars: 319884.60, gmPercent: 43, store: 'Store A' },
-  { week: 'W01', gmDollars: 140061.78, salesDollars: 239526.34, gmPercent: 58, store: 'Store A' },
-  { week: 'W02', gmDollars: 110391.21, salesDollars: 258634.60, gmPercent: 43, store: 'Store A' },
-  { week: 'W03', gmDollars: 101657.28, salesDollars: 263774.46, gmPercent: 39, store: 'Store A' },
-  { week: 'W04', gmDollars: 134341.07, salesDollars: 332652.41, gmPercent: 40, store: 'Store A' },
-  { week: 'W05', gmDollars: 130398.15, salesDollars: 275162.26, gmPercent: 47, store: 'Store A' },
-  { week: 'W06', gmDollars: 137438.96, salesDollars: 319884.60, gmPercent: 43, store: 'Store A' },
-  { week: 'W01', gmDollars: 140061.78, salesDollars: 239526.34, gmPercent: 58, store: 'Store A' },
-  { week: 'W02', gmDollars: 110391.21, salesDollars: 258634.60, gmPercent: 43, store: 'Store A' },
-  { week: 'W03', gmDollars: 101657.28, salesDollars: 263774.46, gmPercent: 39, store: 'Store A' },
-  { week: 'W04', gmDollars: 134341.07, salesDollars: 332652.41, gmPercent: 40, store: 'Store A' },
-  { week: 'W05', gmDollars: 130398.15, salesDollars: 275162.26, gmPercent: 47, store: 'Store A' },
-  { week: 'W06', gmDollars: 137438.96, salesDollars: 319884.60, gmPercent: 43, store: 'Store A' },
-  { week: 'W01', gmDollars: 140061.78, salesDollars: 239526.34, gmPercent: 58, store: 'Store A' },
-  { week: 'W02', gmDollars: 110391.21, salesDollars: 258634.60, gmPercent: 43, store: 'Store A' },
-  { week: 'W03', gmDollars: 101657.28, salesDollars: 263774.46, gmPercent: 39, store: 'Store A' },
-  { week: 'W04', gmDollars: 134341.07, salesDollars: 332652.41, gmPercent: 40, store: 'Store A' },
-  { week: 'W05', gmDollars: 130398.15, salesDollars: 275162.26, gmPercent: 47, store: 'Store A' },
-  { week: 'W06', gmDollars: 137438.96, salesDollars: 319884.60, gmPercent: 43, store: 'Store A' },
+  { week: 'W01', gmDollars: 140061.78, salesDollars: 239526.34, gmPercent: 58, store: 'Crew Neck Merino Wool Sweater' },
+  { week: 'W02', gmDollars: 110391.21, salesDollars: 258634.60, gmPercent: 43, store: 'Faux Leather Leggings' },
+  { week: 'W03', gmDollars: 101657.28, salesDollars: 263774.46, gmPercent: 39, store: 'Fleece-Lined Parka' },
+  { week: 'W04', gmDollars: 134341.07, salesDollars: 332652.41, gmPercent: 40, store: 'Cotton Polo Shirt' },
+  { week: 'W05', gmDollars: 130398.15, salesDollars: 275162.26, gmPercent: 47, store: 'Foldable Travel Hat' },
+  { week: 'W06', gmDollars: 137438.96, salesDollars: 319884.60, gmPercent: 43, store: 'Chic Quilted Wallet' },
+  { week: 'W07', gmDollars: 116387.03, salesDollars: 252500.95, gmPercent: 46, store: 'High-Slit Maxi Dress' },
+  { week: 'W08', gmDollars: 159070.65, salesDollars: 335894.42, gmPercent: 47, store: 'Turtleneck Cable Knit Sweater' },
+  { week: 'W09', gmDollars: 88328.55, salesDollars: 174790.68, gmPercent: 51, store: 'Retro-Inspired Sunglasses' },
+  { week: 'W10', gmDollars: 119284.46, salesDollars: 261782.66, gmPercent: 46, store: 'Stretch Denim Overalls' },
+  { week: 'W11', gmDollars: 130099.18, salesDollars: 292137.38, gmPercent: 45, store: 'Adjustable Elastic Headband' },
+  { week: 'W12', gmDollars: 139360.58, salesDollars: 284207.55, gmPercent: 49, store: 'Adjustable Baseball Cap' },
+  { week: 'W13', gmDollars: 128456.87, salesDollars: 294047.89, gmPercent: 44, store: 'Cotton Polo Shirt' },
+  { week: 'W14', gmDollars: 86661.91, salesDollars: 189073.83, gmPercent: 46, store: 'Faux Suede Ankle Boots' },
+  { week: 'W15', gmDollars: 151592.15, salesDollars: 271421.42, gmPercent: 56, store: 'Striped Cotton Socks' },
+  { week: 'W16', gmDollars: 151686.17, salesDollars: 347732.00, gmPercent: 44, store: 'Performance Compression Tights' },
+  { week: 'W17', gmDollars: 88672.61, salesDollars: 206735.46, gmPercent: 43, store: 'Vintage Logo Hoodie' },
+  { week: 'W18', gmDollars: 81851.01, salesDollars: 175256.89, gmPercent: 47, store: 'Floral Chiffon Wrap Dress' },
+  { week: 'W19', gmDollars: 117644.42, salesDollars: 257209.45, gmPercent: 46, store: 'Asymmetrical Hem Skirt' },
+  { week: 'W20', gmDollars: 75460.72, salesDollars: 196483.55, gmPercent: 38, store: 'Slim Fit Pinstripe Suit' },
+  { week: 'W21', gmDollars: 89873.37, salesDollars: 232307.36, gmPercent: 39, store: 'Chunky Heel Sandals' },
+  { week: 'W22', gmDollars: 217801.24, salesDollars: 400567.98, gmPercent: 54, store: 'Suede Fringe Vest' },
+  { week: 'W23', gmDollars: 80015.21, salesDollars: 187739.22, gmPercent: 43, store: 'Relaxed Fit Cargo Pants' },
+  { week: 'W24', gmDollars: 99365.58, salesDollars: 233854.94, gmPercent: 42, store: 'Corduroy A-Line Skirt' },
+  { week: 'W25', gmDollars: 146165.37, salesDollars: 338581.81, gmPercent: 43, store: 'Formal Dress Shoes' },
+  { week: 'W26', gmDollars: 90708.15, salesDollars: 281071.52, gmPercent: 32, store: 'Tailored Corduroy Blazer' },
+  { week: 'W27', gmDollars: 180504.75, salesDollars: 276942.13, gmPercent: 65, store: 'Foldable Travel Hat' },
+  { week: 'W28', gmDollars: 139442.48, salesDollars: 303695.38, gmPercent: 46, store: 'Asymmetrical Hem Skirt' },
+  { week: 'W29', gmDollars: 139216.77, salesDollars: 314421.17, gmPercent: 44, store: 'Plaid Flannel Shirt' },
+  { week: 'W30', gmDollars: 100489.04, salesDollars: 262484.91, gmPercent: 38, store: 'Oversized Hoodie' },
+  { week: 'W31', gmDollars: 152765.66, salesDollars: 316858.04, gmPercent: 48, store: 'Woven Straw Sun Hat' },
+  { week: 'W32', gmDollars: 75704.04, salesDollars: 169452.56, gmPercent: 45, store: 'Faux Fur Winter Coat' },
+  { week: 'W33', gmDollars: 167605.48, salesDollars: 340037.18, gmPercent: 49, store: 'Casual Cotton Romper' },
+  { week: 'W34', gmDollars: 79485.96, salesDollars: 234269.32, gmPercent: 34, store: 'Racerback Sports Bra' },
+  { week: 'W35', gmDollars: 119596.45, salesDollars: 256836.52, gmPercent: 47, store: 'Polarized Sports Sunglasses' },
+  { week: 'W36', gmDollars: 120675.47, salesDollars: 260032.26, gmPercent: 46, store: 'Chunky Platform Sneakers' },
+  { week: 'W37', gmDollars: 97413.66, salesDollars: 257055.42, gmPercent: 38, store: 'Slim Fit Chinos' },
+  { week: 'W38', gmDollars: 155962.01, salesDollars: 340058.58, gmPercent: 46, store: 'Faux Leather Leggings' },
+  { week: 'W39', gmDollars: 37571.16, salesDollars: 161007.90, gmPercent: 23, store: 'Water-Resistant Fanny Pack' },
+  { week: 'W40', gmDollars: 121974.94, salesDollars: 242047.42, gmPercent: 50, store: 'Water-Resistant Fanny Pack' },
+  { week: 'W41', gmDollars: 128438.16, salesDollars: 196580.97, gmPercent: 65, store: 'Performance Compression Tights' },
+  { week: 'W42', gmDollars: 71208.94, salesDollars: 201049.32, gmPercent: 35, store: 'Cropped Faux Leather Jacket' },
+  { week: 'W43', gmDollars: 128752.29, salesDollars: 293362.74, gmPercent: 44, store: 'Breathable Mesh Shorts' },
+  { week: 'W44', gmDollars: 55866.91, salesDollars: 259462.35, gmPercent: 22, store: 'Minimalist Silver Ring' },
+  { week: 'W45', gmDollars: 134230.98, salesDollars: 358561.15, gmPercent: 37, store: 'Ribbed Turtleneck Dress' },
+  { week: 'W46', gmDollars: 146587.86, salesDollars: 281889.16, gmPercent: 52, store: 'Velvet Slip Dress' },
+  { week: 'W47', gmDollars: 73497.75, salesDollars: 209428.43, gmPercent: 35, store: 'Waterproof Smartwatch' },
+  { week: 'W48', gmDollars: 133371.47, salesDollars: 233990.84, gmPercent: 57, store: 'Patterned Cotton Bucket Hat' },
+  { week: 'W49', gmDollars: 73773.56, salesDollars: 225732.78, gmPercent: 33, store: 'Diamond Stud Earrings' },
+  { week: 'W50', gmDollars: 110037.62, salesDollars: 244378.20, gmPercent: 45, store: 'Tassel Fringe Handbag' },
+  { week: 'W51', gmDollars: 96149.38, salesDollars: 266757.29, gmPercent: 36, store: 'Tactical Hiking Backpack' },
+  { week: 'W52', gmDollars: 138093.51, salesDollars: 245570.72, gmPercent: 56, store: 'Patterned Cotton Bucket Hat' },
 ];
-
-

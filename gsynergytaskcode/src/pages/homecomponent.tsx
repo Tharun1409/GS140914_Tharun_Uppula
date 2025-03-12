@@ -2,14 +2,12 @@ import React, { useState } from "react";
 import Sidebar from "../components/sidebarcomponent";
 import StoreList from "../pages/storepage";
 import {
-  
   ChartData,
   SkuStoreData,
   storeData,
   storeDatas,
-
-
 } from "../data/storeData";
+
 import "./homecomponent.css";
 import SKUList from "./skupage";
 import PlanningGrid from "./planningpage";
@@ -33,8 +31,7 @@ const HomeComponent: React.FC = () => {
         return <PlanningGrid rowData={storeDatas} />;
 
       case "Charts":
-        return  <ChartsPage chartdatastore={ChartData}/>
-
+        return <ChartsPage chartdatastore={ChartData} />;
 
       default:
         return <StoreList data={storeData} />;
