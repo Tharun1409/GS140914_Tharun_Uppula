@@ -48,11 +48,8 @@ const SKUList: React.FC<SKUListProps> = ({ data }) => {
   };
 
   return (
+    <>
     <div className="sku-container">
-      <button className="add-sku-btn" onClick={handleAddSKU}>
-        Add New SKU
-      </button>
-
       {skuData.length === 0 ? (
         <p className="empty-message">
           No SKU data available. Please add new SKUs.
@@ -68,13 +65,13 @@ const SKUList: React.FC<SKUListProps> = ({ data }) => {
               >
                 <thead>
                   <tr>
-                    <th>ID</th>
-                    <th>Label</th>
-                    <th>Class</th>
-                    <th>Department</th>
+                    
+                  
+                  <th></th>
+                    <th>SKU</th>
                     <th>Price</th>
                     <th>Cost</th>
-                    <th>Actions</th>
+                    
                   </tr>
                 </thead>
 
@@ -88,13 +85,6 @@ const SKUList: React.FC<SKUListProps> = ({ data }) => {
                           {...provided.dragHandleProps}
                           className="sku-row"
                         >
-                          <td>{sku.id}</td>
-                          <td>{sku.label}</td>
-                          <td>{sku.class}</td>
-                          <td>{sku.department}</td>
-                          <td>{sku.price}</td>
-                          <td>{sku.cost}</td>
-
                           <td>
                             <FontAwesomeIcon
                               icon={faTrash}
@@ -102,6 +92,12 @@ const SKUList: React.FC<SKUListProps> = ({ data }) => {
                               style={{ cursor: "pointer", color: "red" }}
                             />
                           </td>
+                          <td>{sku.label}</td>
+                        
+                          <td>{sku.price}</td>
+                          <td>{sku.cost}</td>
+
+                         
                         </tr>
                       )}
                     </Draggable>
@@ -114,6 +110,12 @@ const SKUList: React.FC<SKUListProps> = ({ data }) => {
         </DragDropContext>
       )}
     </div>
+    <div  className="new-sku-store-btn-container">
+        <button className="add-sku-btn" onClick={handleAddSKU}>
+        Add New SKU
+      </button>
+      </div>
+</>
   );
 };
 

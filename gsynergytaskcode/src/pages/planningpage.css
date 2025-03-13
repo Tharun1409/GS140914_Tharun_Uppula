@@ -1,19 +1,12 @@
-.gm-green {
-  background-color: #4caf50 !important; 
-  color: white !important;
+.gm-high {
+  color: green;
+  font-weight: bold;
 }
-
-.gm-yellow {
-  background-color: #ffeb3b !important; 
-  color: black !important;
+.gm-medium {
+  color: orange;
+  font-weight: bold;
 }
-
-.gm-orange {
-  background-color: #ff9800 !important; 
-  color: black !important;
-}
-
-.gm-red {
-  background-color: #f44336 !important; 
-  color: white !important;
+.gm-low {
+  color: red;
+  font-weight: bold;
 }

@@ -22,3 +22,16 @@
 .sidebar li.active {
   background-color: #ddd;
 }
+.tab {
+  padding: 12px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  transition: background 0.3s ease-in-out;
+}
+.icon {
+  margin-right: 8px;
+}

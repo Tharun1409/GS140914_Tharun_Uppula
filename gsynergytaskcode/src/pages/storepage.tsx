@@ -54,7 +54,7 @@ const StoreList: React.FC<StoreListProps> = ({ data }) => {
               <thead>
                 <tr>
                   <th></th>
-                  <th>Action</th>
+                  <th> |</th>
                   <th>S.No</th>
                   <th>Store</th>
                   <th>City</th>
@@ -77,7 +77,7 @@ const StoreList: React.FC<StoreListProps> = ({ data }) => {
                         <td>
                           <FontAwesomeIcon
                             icon={faTrash}
-                            onClick={() => handleDelete(store.id)} // Calls handleDelete
+                            onClick={() => handleDelete(store.id)} 
                             style={{ cursor: "pointer", color: "red" }}
                           />
                         </td>

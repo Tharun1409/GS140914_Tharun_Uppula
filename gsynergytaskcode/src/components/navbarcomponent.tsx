@@ -12,14 +12,15 @@ import {
 } from "@mui/material";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import { useAuth } from "../context/authcontext";
-import './navbar.module.css'
+import styles from "./navbar.module.css";
+// import logo from "../assets/GSynergylogo.svg";
 
 const Navbar: React.FC = () => {
   const { user, loading, signInWithGoogle, signOutUser } = useAuth();
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
 
   const handleMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorEl(event.currentTarget as HTMLElement);
+    setAnchorEl(event.currentTarget);
   };
 
   const handleMenuClose = () => {
@@ -27,12 +28,9 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <AppBar
-      position="static"
-      sx={{ backgroundColor: "white", color: "black", boxShadow: 1 }}
-    >
-      <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
-        <Box display="flex" alignItems="center">
+    <AppBar position="static" className={styles.navbar}>
+      <Toolbar className={styles.toolbar}>
+        <Box className={styles.logoContainer}>
           <img
             src={`${process.env.PUBLIC_URL}/assets/GSynergylogo.svg`}
             alt="GSynergy Logo"
@@ -40,14 +38,22 @@ const Navbar: React.FC = () => {
           />
         </Box>
 
-        <Typography variant="h6">Data Viewer App</Typography>
+        <Typography variant="h6" className={styles.title}>
+          Data Viewer App
+        </Typography>
 
         <Box>
           {loading ? (
             <Typography variant="body2">Loading...</Typography>
           ) : user ? (
             <>
-              <IconButton onClick={handleMenuOpen} color="inherit">
+              <IconButton
+                onClick={handleMenuOpen}
+                color="inherit"
+                aria-label="User menu"
+                aria-controls="user-menu"
+                aria-haspopup="true"
+              >
                 {user.photoURL ? (
                   <Avatar src={user.photoURL} alt="Profile" />
                 ) : (
@@ -55,6 +61,7 @@ const Navbar: React.FC = () => {
                 )}
               </IconButton>
               <Menu
+                id="user-menu"
                 anchorEl={anchorEl}
                 open={Boolean(anchorEl)}
                 onClose={handleMenuClose}

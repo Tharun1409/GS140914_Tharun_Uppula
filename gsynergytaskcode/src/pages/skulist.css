@@ -43,19 +43,38 @@
     z-index: 1;
   }
   
-  .add-sku-btn {
-    background-color: #4CAF50;
-    color: #fff;
-    padding: 8px 16px;
-    border: none;
-    border-radius: 4px;
-    margin-bottom: 10px;
-    cursor: pointer;
+  .new-sku-store-btn-container {
+    position: fixed;
+    bottom: 20px; 
+    left: 250px; 
+    width: calc(100% - 250px); 
+    display: flex;
+    justify-content: flex-start; 
+    padding-left: 20px; 
   }
   
-  .add-sku-btn:hover {
-    background-color: #45a049;
+  .add-sku-btn {
+    background-color: #f39072; 
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   }
+  
+  .add-store-btn:hover {
+    background-color: #e27b5d;
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  .add-store-btn:active {
+    background-color: #d36a4c;
+  }
+
   .empty-message {
     text-align: center;
     color: #999;

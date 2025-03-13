@@ -30,7 +30,7 @@ const HomeComponent: React.FC = () => {
       case "Planning":
         return <PlanningGrid rowData={storeDatas} />;
 
-      case "Charts":
+      case "Charts": 
         return <ChartsPage chartdatastore={ChartData} />;
 
       default:

@@ -1,6 +1,11 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStore, faBox, faProjectDiagram, faChartBar } from "@fortawesome/free-solid-svg-icons";
+import {
+  faStore,
+  faBox,
+  faProjectDiagram,
+  faChartBar,
+} from "@fortawesome/free-solid-svg-icons";
 import styles from "./sidebar.module.css";
 
 interface SidebarProps {
@@ -18,30 +23,24 @@ const Sidebar: React.FC<SidebarProps> = ({ setSelectedTab }) => {
   return (
     <div className={styles.sidebar}>
       <ul>
-        <li
-          className={`${styles.tab} ${activeTab === "Store" ? styles.active : ""}`}
-          onClick={() => handleTabClick("Store")}
-        >
-          <FontAwesomeIcon icon={faStore} style={{ marginRight: "8px" }} /> Store
-        </li>
-        <li
-          className={`${styles.tab} ${activeTab === "SKU" ? styles.active : ""}`}
-          onClick={() => handleTabClick("SKU")}
-        >
-          <FontAwesomeIcon icon={faBox} style={{ marginRight: "8px" }} /> SKU
-        </li>
-        <li
-          className={`${styles.tab} ${activeTab === "Planning" ? styles.active : ""}`}
-          onClick={() => handleTabClick("Planning")}
-        >
-          <FontAwesomeIcon icon={faProjectDiagram} style={{ marginRight: "8px" }} /> Planning
-        </li>
-        <li
-          className={`${styles.tab} ${activeTab === "Charts" ? styles.active : ""}`}
-          onClick={() => handleTabClick("Charts")}
-        >
-          <FontAwesomeIcon icon={faChartBar} style={{ marginRight: "8px" }} /> Charts
-        </li>
+        {[
+          { name: "Store", icon: faStore },
+          { name: "SKU", icon: faBox },
+          { name: "Planning", icon: faProjectDiagram },
+          { name: "Charts", icon: faChartBar },
+        ].map(({ name, icon }) => (
+          <li
+            key={name}
+            className={`${styles.tab} ${
+              activeTab === name ? styles.active : ""
+            }`}
+            onClick={() => handleTabClick(name)}
+            role="button"
+            tabIndex={0}
+          >
+            <FontAwesomeIcon icon={icon} className={styles.icon} /> {name}
+          </li>
+        ))}
       </ul>
     </div>
   );

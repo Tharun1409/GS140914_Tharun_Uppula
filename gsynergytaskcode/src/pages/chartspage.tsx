@@ -35,7 +35,10 @@ const ChartsPage: React.FC<ChartsPageProps> = ({ chartdatastore }) => {
     selectedStore === "All"
       ? chartdatastore
       : chartdatastore.filter((item) => item.store === selectedStore);
-
+      if (!chartdatastore || chartdatastore.length === 0) {
+        return <p style={{ color: "white" }}>No data available</p>;
+      }
+      
   console.log(JSON.stringify(filteredData, null, 2));
 
   return (
@@ -67,6 +70,7 @@ const ChartsPage: React.FC<ChartsPageProps> = ({ chartdatastore }) => {
           ))}
         </select>
       </div>
+      <div style={{ width: "100%", height: "100%" }}>
       <ResponsiveContainer width="100%" height={400}>
         <ComposedChart
           data={filteredData}
@@ -79,7 +83,7 @@ const ChartsPage: React.FC<ChartsPageProps> = ({ chartdatastore }) => {
             interval={0}
             textAnchor="end"
             tick={{ fill: "#fff" }}
-            // tickMargin={10} 
+            // tickMargin={10}
           />
 
           <YAxis
@@ -95,7 +99,7 @@ const ChartsPage: React.FC<ChartsPageProps> = ({ chartdatastore }) => {
             stroke="#FF6F3C"
             tickFormatter={(value) => `${value.toFixed(1)}%`}
             tick={{ fill: "#FF6F3C" }}
-            domain={[0, 70]}
+            domain={[0, 80]}
           />
 
           <Tooltip
@@ -105,32 +109,27 @@ const ChartsPage: React.FC<ChartsPageProps> = ({ chartdatastore }) => {
               borderRadius: "8px",
             }}
             formatter={(value, name) => {
-              if (
-                value === null ||
-                value === undefined ||
-                isNaN(Number(value))
-              ) {
-                return "-";
-              }
-
-              const numValue = Number(value);
-
+              if (!value || isNaN(Number(value))) return "-"; 
+            
               if (name === "GM %") {
-                return `${numValue.toFixed(1)}%`;
+                return `${Number(value).toFixed(1)}%`;
               }
-
-              return `$${numValue.toLocaleString(undefined, {
+            
+              return `$${Number(value).toLocaleString(undefined, {
                 minimumFractionDigits: 2,
                 maximumFractionDigits: 2,
               })}`;
             }}
           />
 
-          <Legend
-            verticalAlign="bottom"
-            align="center"
-            wrapperStyle={{ color: "#fff", marginTop: "10px" }}
-          />
+<Legend 
+  verticalAlign="bottom"
+  align="center"
+  layout="horizontal"
+  wrapperStyle={{ color: "#fff", marginTop: "10px", padding: "20px 0" }}
+  iconSize={10}  
+/>
+
 
           <Bar
             yAxisId="left"
@@ -152,6 +151,7 @@ const ChartsPage: React.FC<ChartsPageProps> = ({ chartdatastore }) => {
           />
         </ComposedChart>
       </ResponsiveContainer>
+      </div>
     </div>
   );
 };
