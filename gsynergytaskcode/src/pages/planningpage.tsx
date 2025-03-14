@@ -130,7 +130,7 @@ const PlanningGrid: React.FC<PlanningGridProps> = ({ rowData }) => {
         ],
       },
     ],
-    []
+    [calculateGMPercent]
   );
 // function to determine cell styling based on GM percent value 
 //this not working correctly i have tried by done console.log but still not found ,
