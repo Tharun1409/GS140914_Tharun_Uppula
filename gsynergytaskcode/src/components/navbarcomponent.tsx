@@ -13,10 +13,11 @@ import {
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import { useAuth } from "../context/authcontext";
 import styles from "./navbar.module.css";
-// import logo from "../assets/GSynergylogo.svg";
 
 const Navbar: React.FC = () => {
+  // Extacting authentication state and function from the AuthContext
   const { user, loading, signInWithGoogle, signOutUser } = useAuth();
+  //state to manage the user menu dropdown 
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
 
   const handleMenuOpen = (event: React.MouseEvent<HTMLElement>) => {

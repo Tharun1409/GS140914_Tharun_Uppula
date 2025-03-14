@@ -1,4 +1,5 @@
 # GS140914_Tharun_Uppula
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -32,16 +33,29 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 ### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Project Overview
+This Project is a React-baseed application built using Create-Reacr-App using typescript- template
+it includes components for managing SKU, store, Planning, charts, other functionalities with drag-and-drop features and authentication.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Features
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Authentication : uses Firebase for authentication and user management.
+-> Display Charts and table for SKu,store,planning,charts,
+Drag and drop implements drag-and-drop functionality using @hello-pangea/dnd for reordering SKUs and stores.
+Reusable components: includes Navbar, sidebar,SKU, Store and more.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Technologies used
+-> React.js - Frontend framework
+-> TypeScript - Type Safety
+-> Firebase - Authentication
+-> FontAwesome - icons
+->@hello-pangea/dnd- Drag-and-Drop functionality
 
-## Learn More
+i am sharinng the link of GIT (https://github.com/Tharun1409/GS140914_Tharun_Uppula/tree/94b6aae3636744302ec2cdc8a95d6c1ccac151b6/gsynergytaskcode)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Project Application for managing SKUs and Stores . It includes:
+-Authentication (AuthContext, Firebase.ts)
+-Navgation(navbar, sidebar )
+-Data Management(SkUPage,Storepage)
+-interactivity(Drag-and_Drop,Add/Delete Items)
+-Data Visualization (ChartPage).

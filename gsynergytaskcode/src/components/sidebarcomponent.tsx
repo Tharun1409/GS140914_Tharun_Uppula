@@ -7,7 +7,7 @@ import {
   faChartBar,
 } from "@fortawesome/free-solid-svg-icons";
 import styles from "./sidebar.module.css";
-
+// Define the Props interface
 interface SidebarProps {
   setSelectedTab: (tab: string) => void;
 }
@@ -21,7 +21,9 @@ const Sidebar: React.FC<SidebarProps> = ({ setSelectedTab }) => {
   };
 
   return (
+    //sidebar container 
     <div className={styles.sidebar}>
+      {/* {used fortawesome icons  } */}
       <ul>
         {[
           { name: "Store", icon: faStore },

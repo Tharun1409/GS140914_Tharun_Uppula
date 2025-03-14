@@ -2,7 +2,7 @@ import React, { createContext, useContext, useEffect, useState, ReactNode } from
 import { auth, googleProvider } from "../firebase/firebase";
 import { signInWithPopup, signOut, onAuthStateChanged, User } from "firebase/auth";
 
-
+// Define the shape of the authentication context
 interface AuthContextType {
   user: User | null;
   loading: boolean;
@@ -12,11 +12,11 @@ interface AuthContextType {
 
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
-
+//AuthProvider Component manages authntication state and providees it to the entire APP
 export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
-
+//useEffect to listen for Authentication state changes when the compoe=nent mounts 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
@@ -42,6 +42,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   };
 
   return (
+    //Provide authentication contexxt in components
     <AuthContext.Provider value={{ user, loading, signInWithGoogle, signOutUser }}>
       {children}
     </AuthContext.Provider>

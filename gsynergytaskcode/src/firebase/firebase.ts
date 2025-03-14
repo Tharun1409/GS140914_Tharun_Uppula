@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
-
+// i used firebase , and created the key for Authentication 
 const firebaseConfig = {
   apiKey: "AIzaSyCeBQ-J-n0Dso7LeICH7NdJx9SKIT0ly4Q",
   authDomain: "gsynergy-c0ea5.firebaseapp.com",

@@ -15,13 +15,4 @@ export interface DataStore {
     cost: string;
   }
   
-//   export interface IStoreData {
-//     Store: string;
-//     SKU: string;
-//     Week: string;
-//     Month: string;
-//     SalesUnits: number;
-//     Price: number;
-//     Cost: number;
-// }
-// src/data/storeData.ts
+
